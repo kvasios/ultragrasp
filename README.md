@@ -2,6 +2,10 @@
 
 UltraGrasp uses Ultraleap hand tracking on **Ubuntu 24.04** with a working Python API (LeapC via `leapc-python-bindings`).
 
+### Demo
+
+[![Watch the demo on YouTube](https://img.youtube.com/vi/zAbXOstUxzs/hqdefault.jpg)](https://www.youtube.com/watch?v=zAbXOstUxzs)
+
 ### What this repo contains
 
 - **Ultraleap runtime setup**: installs the tracking service and `libLeapC.so` on Ubuntu.
