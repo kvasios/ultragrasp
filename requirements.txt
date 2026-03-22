@@ -1,0 +1,8 @@
+numpy
+matplotlib
+pyyaml
+click
+atomics
+scipy
+torch
+zerorpc

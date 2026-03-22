@@ -1,0 +1,6 @@
+[submodule "dependencies/leapc-python-bindings"]
+	path = dependencies/leapc-python-bindings
+	url = https://github.com/ultraleap/leapc-python-bindings.git
+[submodule "dependencies/universal_manipulation_interface"]
+	path = dependencies/universal_manipulation_interface
+	url = https://github.com/real-stanford/universal_manipulation_interface.git

@@ -1,0 +1,57 @@
+robot_control:
+  enabled: true
+  # Middle-layer Franka / Polymetis bridge host used by UMI.
+  robot_ip: "192.168.122.100"
+  robot_port: 4242
+  command_rate_hz: 100
+  controller_frequency: 200
+  command_latency: 0.0
+  receive_latency: 0.0
+  # If true, UMI calls go_home() once at bridge startup. Default false: use Dashboard Home / h.
+  home_on_connect: false
+  home_joint_positions: [0.0, -0.7853981634, 0.0, -2.3561944902, 0.0, 1.5707963268, 0.7853981634]
+  home_move_duration: 5.0
+
+  # Hand displacement in millimeters is multiplied by this value to get robot
+  # translation in meters before per-axis scaling.
+  position_sensitivity_m_per_mm: 0.0010
+
+  # Extra axis gains after the Leap-to-command frame remap:
+  #   x <- hand x
+  #   y <- -hand z
+  #   z <- hand y
+  axis_scale: [1.0, 1.0, 1.0]
+
+  # Additional TCP-local rotation applied after the Leap remap above.
+  # This lets you align "move hand right/forward/up" with the robot tool axes
+  # you actually want. Format: [roll, pitch, yaw] in degrees, using
+  # R = Rz(yaw) @ Ry(pitch) @ Rx(roll).
+  tcp_relative_rpy_deg: [0.0, 0.0, 90.0]
+
+  # Franka cartesian impedance gain scaling passed to the UMI controller.
+  Kx_scale: 1.0
+  Kxd_scale: [2.0, 1.5, 2.0, 1.0, 1.0, 1.0]
+  soft_real_time: false
+
+  # Off by default to keep hand roll/pitch/yaw from unexpectedly rotating the robot.
+  orientation_control: true
+
+  # Start safe: print Franka target poses instead of sending them. Set false for live robot control.
+  debug: false
+
+wsg_control:
+  enabled: true
+  hostname: "172.16.0.4"
+  port: 1000
+  frequency: 30.0
+  home_to_open: true
+  max_speed: 400.0
+  max_pos: 110.0
+  # gesture can be "pinch" or "grasp"
+  gesture: "grasp"
+  filter_time_constant: 0.05
+  command_latency: 0.0
+  receive_latency: 0.0
+  use_meters: false
+  # direct_strength: false means 1-strength is used (0 strength = full open). true means 0 strength = closed.
+  direct_strength: false
