@@ -1,3 +1,9 @@
+# Derived from Universal Manipulation Interface (UMI):
+# https://github.com/real-stanford/universal_manipulation_interface
+# Copyright (c) 2023 Columbia Artificial Intelligence and Robotics Lab
+# Licensed under the MIT License; see dependencies/universal_manipulation_interface/LICENSE.
+# This file contains local UltraGrasp-specific modifications.
+
 import zerorpc
 from polymetis import RobotInterface
 import scipy.spatial.transform as st
